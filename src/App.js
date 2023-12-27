@@ -109,11 +109,11 @@ function App() {
     <div className="container">
       <ScoreBoard />
 
-      <div className="pentagonImageDiv">
-        <img src={Pentagon} className="pentagonImage"></img>
-      </div>
+      <div className="buttonsContainer">
+        <div className="pentagonImageDiv">
+          <img src={Pentagon} className="pentagonImage"></img>
+        </div>
 
-      <div>
         <div className="spockDiv">
           <button onClick={() => makeMove("spock")} className="gameButton">
             <img src={SpockHandIcon} alt="SpockHandIcon" />

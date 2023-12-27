@@ -12,12 +12,15 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.buttonsContainer {
+  display: none;
+}
 
 .gameButton {
   position: relative;
-  border-radius: 90px;
-  width: 90px;
-  height: 90px;
+  border-radius: 110px;
+  width: 110px;
+  height: 110px;
   border: none;
   margin-left: 15px;
   cursor: pointer;
@@ -83,17 +86,17 @@ body {
   position: relative;
 }
 .pentagonImage {
-  width: 450px;
-  height: 450px;
+  width: 500px;
+  height: 500px;
 }
 .spockDiv {
   position: relative;
   display: flex;
   align-items: center;
-  width: 120px;
-  height: 120px;
-  right: 200px;
-  bottom: 330px;
+  width: 140px;
+  height: 140px;
+  right: 40px;
+  bottom: 370px;
   border-radius: 100px;
   background: linear-gradient(to bottom, #40b9ce, #52bed1);
 }
@@ -101,9 +104,10 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  width: 120px;
-  height: 120px;
-  bottom: 600px;
+  width: 140px;
+  height: 140px;
+  left: 185px;
+  bottom: 700px;
   border-radius: 100px;
   background-color: hsl(39, 89%, 49%);
 }
@@ -111,10 +115,10 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  width: 120px;
-  height: 120px;
-  left: 140px;
-  bottom: 450px;
+  width: 140px;
+  height: 140px;
+  left: 320px;
+  bottom: 520px;
   border-radius: 100px;
   background-color: hsl(349, 71%, 52%);
 }
@@ -122,10 +126,10 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  width: 120px;
-  height: 120px;
-  left: 200px;
-  bottom: 560px;
+  width: 140px;
+  height: 140px;
+  left: 400px;
+  bottom: 650px;
   border-radius: 100px;
   background-color: hsl(230, 89%, 62%);
 }
@@ -133,10 +137,10 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  width: 120px;
-  height: 120px;
-  right: 140px;
-  bottom: 570px;
+  width: 140px;
+  height: 140px;
+  left: 50px;
+  bottom: 660px;
   border-radius: 100px;
   background-color: hsl(288, 54%, 32%);
 }
