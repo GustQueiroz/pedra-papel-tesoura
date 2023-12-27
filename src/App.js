@@ -105,33 +105,43 @@ function App() {
   };
 
   return (
-    <div className="background-gradient">
+    <div className="container">
       <header className="App-header"></header>
 
-      {winner && <h1>{winner}</h1>}
+      <img src={Pentagon} className="pentagonImage"></img>
       <div>
-        <button onClick={() => makeMove("spock")} className="gameButton">
-          <img src={SpockHandIcon} alt="SpockHandIcon" />
-        </button>
+        <div className="spockDiv">
+          <button onClick={() => makeMove("spock")} className="gameButton">
+            <img src={SpockHandIcon} alt="SpockHandIcon" />
+          </button>
+        </div>
 
-        <button onClick={() => makeMove("scissor")} className="gameButton">
-          <img src={ScissorHandIcon} alt="ScissorHandIcon" />
-        </button>
+        <div className="scissorDiv">
+          <button onClick={() => makeMove("scissor")} className="gameButton">
+            <img src={ScissorHandIcon} alt="ScissorHandIcon" />
+          </button>
+        </div>
 
-        <button onClick={() => makeMove("paper")} className="gameButton">
-          <img src={PaperHandIcon} alt="PaperHandIcon" />
-        </button>
+        <div className="paperDiv">
+          <button onClick={() => makeMove("paper")} className="gameButton">
+            <img src={PaperHandIcon} alt="PaperHandIcon" />
+          </button>
+        </div>
 
-        <button onClick={() => makeMove("rock")} className="gameButton">
-          <img src={RockHandIcon} alt="RockHandIcon" />
-        </button>
+        <div className="rockDiv">
+          <button onClick={() => makeMove("rock")} className="gameButton">
+            <img src={RockHandIcon} alt="RockHandIcon" />
+          </button>
+        </div>
 
-        <button onClick={() => makeMove("lizard")} className="gameButton">
-          <img src={LizardHandIcon} alt="LizardHandIcon" />
-        </button>
+        <div className="lizardDiv">
+          <button onClick={() => makeMove("lizard")} className="gameButton">
+            <img src={LizardHandIcon} alt="LizardHandIcon" />
+          </button>
+        </div>
       </div>
 
-      <RulesButton />
+      <RulesButton className="rulesButtonOnScreen" />
     </div>
   );
 }
