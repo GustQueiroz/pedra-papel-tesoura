@@ -13,7 +13,7 @@ const ScoreBoard = ({ scores }) => {
       </div>
       <div className="score-container">
         <div className="score-box">
-          <p className="score-text">Score</p>
+          <p className="score-text">SCORE</p>
           <p className="score-number">{scores}</p>
         </div>
       </div>

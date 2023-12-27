@@ -1,6 +1,5 @@
 import React from "react";
-import { useState, Fragment } from "react";
-import Modal from "react-modal";
+import { useState } from "react";
 import "./App.css";
 import RulesButton from "./components/RulesButton.js";
 import RockHandIcon from "./img/icon-rock.svg";
@@ -10,9 +9,12 @@ import LizardHandIcon from "./img/icon-lizard.svg";
 import Pentagon from "./img/bg-pentagon.svg";
 import ScissorHandIcon from "./img/icon-scissors.svg";
 import ScoreBoard from "./components/ScoreBoard.js";
+import BattleComponent from "./components/BattleComponent.js";
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [buttonsContainerVisible, setButtonsContainerVisible] = useState(true);
+  const [buttonsContainerOpacity, setButtonsContainerOpacity] = useState(1);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -23,6 +25,8 @@ function App() {
   };
 
   const [winner, setWinner] = useState("");
+  const [playerMove, setPlayerMove] = useState("");
+  const [machineMoveType, setMachineMoveType] = useState("");
   const [possibleMoves, setPossibleMoves] = useState([
     {
       type: "rock",
@@ -97,19 +101,38 @@ function App() {
       playerMoveValidation.wins.includes(machineMoveType);
 
     if (isPlayerTheWinner) {
-      setWinner("Jogador");
+      setWinner("Você Ganhou");
     } else if (machineMoveType === playerMove) {
-      setWinner("Empate");
+      setWinner("Houve um Empate");
     } else {
-      setWinner("Computador");
+      setWinner("Você Perdeu");
     }
+
+    setPlayerMove(playerMove);
+
+    setTimeout(() => {
+      setMachineMoveType(machineMoveType);
+    }, 4000);
+
+    setButtonsContainerOpacity(0);
+
+    setTimeout(() => {
+      setButtonsContainerVisible(false);
+    }, 1000);
   };
+
+  console.log(winner);
 
   return (
     <div className="container">
       <ScoreBoard />
 
-      <div className="buttonsContainer">
+      <div
+        className={`buttonsContainer ${
+          buttonsContainerVisible ? "visible" : "hidden"
+        }`}
+        style={{ opacity: buttonsContainerOpacity }}
+      >
         <div className="pentagonImageDiv">
           <img src={Pentagon} className="pentagonImage"></img>
         </div>
@@ -147,6 +170,11 @@ function App() {
           </button>
         </div>
       </div>
+
+      <BattleComponent
+        playerMove={playerMove}
+        machineMoveType={machineMoveType}
+      />
 
       <RulesButton className="rulesButtonOnScreen" />
     </div>

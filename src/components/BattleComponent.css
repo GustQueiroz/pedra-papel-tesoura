@@ -1,0 +1,38 @@
+.battle-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 220px;
+}
+
+.your-choice,
+.machine-choice {
+  text-align: center;
+  color: #fff;
+}
+
+.move-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 100px;
+  background-color: hsl(245, 57%, 37%);
+}
+
+.move-image {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: none;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.machine-choice {
+  margin-left: 20px;
+}
+
+.machine-choice .move-container {
+  background-color: hsl(349, 71%, 52%);
+}

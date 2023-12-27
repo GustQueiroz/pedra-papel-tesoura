@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: "Barlow Semi Condensed", sans-serif;
-  overflow-y: hidden;
+
   overflow-x: hidden;
   background: linear-gradient(to right, #1f3756, #141539);
 }
@@ -13,7 +13,17 @@ body {
   align-items: center;
 }
 .buttonsContainer {
+  transition: opacity 2s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
   display: none;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
 }
 
 .gameButton {
@@ -29,9 +39,6 @@ body {
 .gameButton:hover {
   opacity: 90%;
   transform: scale(1.05);
-}
-.lizard {
-  margin-left: 15px;
 }
 .rulesModal {
   display: flex;
