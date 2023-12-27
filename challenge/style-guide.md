@@ -19,13 +19,13 @@ The designs were created to the following widths:
 
 ### Neutral
 
-- Dark Text: hsl(229, 25%, 31%)
-- Score Text: hsl(229, 64%, 46%)
-- Header Outline: hsl(217, 16%, 45%)
+- Dark Text: #3B4363
+- Score Text: #2A46C0
+- Header Outline: #606E85
 
 ### Background
 
-- Radial Gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%)
+- Radial Gradient: #1F3756 to #141539
 
 ## Fonts
 

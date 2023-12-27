@@ -1,3 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=League+Spartan:wght@700&family=Outfit:wght@400;700&family=Poppins:wght@100;300;500;700&display=swap");
+
 body {
-  font-family: arial;
+  margin: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background: linear-gradient(to right, #1f3756, #141539);
+}
+
+.ReactModal__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  transition: opacity 200ms ease-in-out;
+  z-index: 1000;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.gameButton {
+  border-radius: 50px;
+}
+.rulesModal {
+  display: flex;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  width: 400px;
+  height: 450px;
+}
+.rulesCloseButton {
+  border: none;
+  width: 50px;
+  height: 50px;
+}
+.rulesCloseButton:hover {
+  opacity: 40%;
+}
+.rulesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+}
+.rulesImage {
+  margin-left: 20px;
+}
+.rulesText {
+  color: #3a3a3a;
+  font-size: 24px;
+}
+.rulesButton {
+  border-radius: 10px;
+  font-weight: 700;
+  width: 120px;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  border: rgb(255, 255, 255) solid 1px;
+  background: transparent;
 }

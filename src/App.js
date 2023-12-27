@@ -1,13 +1,26 @@
 import React from "react";
 import { useState, Fragment } from "react";
+import Modal from "react-modal";
 import "./App.css";
+import RulesButton from "./components/RulesButton.js";
 import RockHandIcon from "./img/icon-rock.svg";
 import PaperHandIcon from "./img/icon-paper.svg";
 import SpockHandIcon from "./img/icon-spock.svg";
 import LizardHandIcon from "./img/icon-lizard.svg";
+import Pentagon from "./img/bg-pentagon.svg";
 import ScissorHandIcon from "./img/icon-scissors.svg";
 
 function App() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   const [winner, setWinner] = useState("");
   const [possibleMoves, setPossibleMoves] = useState([
     {
@@ -73,6 +86,7 @@ function App() {
     }
 
     console.log(machineMoveType);
+    console.log(playerMove);
 
     const playerMoveValidation = possibleMoves.find(
       (currentMove) => currentMove.type === playerMove
@@ -91,31 +105,34 @@ function App() {
   };
 
   return (
-    <Fragment>
+    <div className="background-gradient">
       <header className="App-header"></header>
 
       {winner && <h1>{winner}</h1>}
+      <div>
+        <button onClick={() => makeMove("spock")} className="gameButton">
+          <img src={SpockHandIcon} alt="SpockHandIcon" />
+        </button>
 
-      <button onClick={() => makeMove("spock")}>
-        <img src={SpockHandIcon} alt="SpockHandIcon" />
-      </button>
+        <button onClick={() => makeMove("scissor")} className="gameButton">
+          <img src={ScissorHandIcon} alt="ScissorHandIcon" />
+        </button>
 
-      <button onClick={() => makeMove("scissor")}>
-        <img src={ScissorHandIcon} alt="ScissorHandIcon" />
-      </button>
+        <button onClick={() => makeMove("paper")} className="gameButton">
+          <img src={PaperHandIcon} alt="PaperHandIcon" />
+        </button>
 
-      <button onClick={() => makeMove("paper")}>
-        <img src={PaperHandIcon} alt="PaperHandIcon" />
-      </button>
+        <button onClick={() => makeMove("rock")} className="gameButton">
+          <img src={RockHandIcon} alt="RockHandIcon" />
+        </button>
 
-      <button onClick={() => makeMove("rock")}>
-        <img src={RockHandIcon} alt="RockHandIcon" />
-      </button>
+        <button onClick={() => makeMove("lizard")} className="gameButton">
+          <img src={LizardHandIcon} alt="LizardHandIcon" />
+        </button>
+      </div>
 
-      <button onClick={() => makeMove("lizard")}>
-        <img src={LizardHandIcon} alt="LizardHandIcon" />
-      </button>
-    </Fragment>
+      <RulesButton />
+    </div>
   );
 }
 
