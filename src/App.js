@@ -9,6 +9,7 @@ import SpockHandIcon from "./img/icon-spock.svg";
 import LizardHandIcon from "./img/icon-lizard.svg";
 import Pentagon from "./img/bg-pentagon.svg";
 import ScissorHandIcon from "./img/icon-scissors.svg";
+import ScoreBoard from "./components/ScoreBoard.js";
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -106,9 +107,12 @@ function App() {
 
   return (
     <div className="container">
-      <header className="App-header"></header>
+      <ScoreBoard />
 
-      <img src={Pentagon} className="pentagonImage"></img>
+      <div className="pentagonImageDiv">
+        <img src={Pentagon} className="pentagonImage"></img>
+      </div>
+
       <div>
         <div className="spockDiv">
           <button onClick={() => makeMove("spock")} className="gameButton">
@@ -135,7 +139,10 @@ function App() {
         </div>
 
         <div className="lizardDiv">
-          <button onClick={() => makeMove("lizard")} className="gameButton">
+          <button
+            onClick={() => makeMove("lizard")}
+            className="gameButton lizard"
+          >
             <img src={LizardHandIcon} alt="LizardHandIcon" />
           </button>
         </div>

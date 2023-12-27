@@ -15,10 +15,20 @@ body {
 
 .gameButton {
   position: relative;
-  border-radius: 100px;
-  width: 100px;
-  height: 100px;
+  border-radius: 90px;
+  width: 90px;
+  height: 90px;
   border: none;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.gameButton:hover {
+  opacity: 90%;
+  transform: scale(1.05);
+}
+.lizard {
+  margin-left: 15px;
 }
 .rulesModal {
   display: flex;
@@ -68,10 +78,13 @@ body {
   border: none;
   color: #ffffff31;
 }
+.pentagonImageDiv {
+  margin-top: 100px;
+  position: relative;
+}
 .pentagonImage {
   width: 450px;
   height: 450px;
-  position: absolute;
 }
 .spockDiv {
   position: relative;
@@ -79,6 +92,8 @@ body {
   align-items: center;
   width: 120px;
   height: 120px;
+  right: 200px;
+  bottom: 330px;
   border-radius: 100px;
   background: linear-gradient(to bottom, #40b9ce, #52bed1);
 }
@@ -88,8 +103,9 @@ body {
   align-items: center;
   width: 120px;
   height: 120px;
+  bottom: 600px;
   border-radius: 100px;
-  background-color: hsl(189, 59%, 53%);
+  background-color: hsl(39, 89%, 49%);
 }
 .rockDiv {
   position: relative;
@@ -97,8 +113,10 @@ body {
   align-items: center;
   width: 120px;
   height: 120px;
+  left: 140px;
+  bottom: 450px;
   border-radius: 100px;
-  background-color: hsl(189, 59%, 53%);
+  background-color: hsl(349, 71%, 52%);
 }
 .paperDiv {
   position: relative;
@@ -106,8 +124,10 @@ body {
   align-items: center;
   width: 120px;
   height: 120px;
+  left: 200px;
+  bottom: 560px;
   border-radius: 100px;
-  background-color: hsl(189, 59%, 53%);
+  background-color: hsl(230, 89%, 62%);
 }
 .lizardDiv {
   position: relative;
@@ -115,6 +135,8 @@ body {
   align-items: center;
   width: 120px;
   height: 120px;
+  right: 140px;
+  bottom: 570px;
   border-radius: 100px;
-  background-color: hsl(189, 59%, 53%);
+  background-color: hsl(288, 54%, 32%);
 }
