@@ -3,9 +3,9 @@
 body {
   margin: 0;
   font-family: "Barlow Semi Condensed", sans-serif;
-
+  overflow-y: hidden;
   overflow-x: hidden;
-  background: linear-gradient(to left, #1f3756, #141539);
+  background: linear-gradient(to right, #1f3756, #141539);
 }
 .container {
   display: flex;
@@ -74,7 +74,7 @@ body {
 .rulesButton {
   position: fixed;
   top: 900px;
-  left: 1740px;
+  left: 1600px;
   border-radius: 8px;
   font-weight: 700;
   width: 150px;

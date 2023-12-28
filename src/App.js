@@ -109,7 +109,7 @@ function App() {
       setTimeout(() => {
         setScore((prevScore) => prevScore + 1);
         localStorage.setItem("score", (score + 1).toString());
-      }, 4000);
+      }, 3500);
     } else if (machineMoveType === playerMove) {
       setWinner("Houve um Empate");
     } else {
@@ -117,7 +117,7 @@ function App() {
       setTimeout(() => {
         setScore(0);
         localStorage.setItem("score", "0");
-      }, 4000);
+      }, 350);
     }
 
     setPlayerMove(playerMove);
