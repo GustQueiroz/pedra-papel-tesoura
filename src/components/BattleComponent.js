@@ -18,6 +18,7 @@ const BattleComponent = ({ playerMove, machineMoveType }) => {
   const playerMoveIcon = moveIcons[playerMove];
   const machineMoveIcon = moveIcons[machineMoveType];
   const [winner, setWinner] = useState("");
+  const [isButtonVisible, setButtonVisibility] = useState(false);
   const [resultMessage, setResultMessage] = useState("");
   const [possibleMoves, setPossibleMoves] = useState([
     {
@@ -70,6 +71,8 @@ const BattleComponent = ({ playerMove, machineMoveType }) => {
         : "Você Perdeu";
 
       setResultMessage(message);
+
+      setButtonVisibility(true);
     }, delay);
 
     return () => clearTimeout(timeoutId);
@@ -86,6 +89,15 @@ const BattleComponent = ({ playerMove, machineMoveType }) => {
 
       <div className="result-message-container">
         <p>{resultMessage}</p>
+
+        {isButtonVisible && (
+          <button
+            className="playAgainButton"
+            onClick={() => window.location.reload()}
+          >
+            Jogar Novamente
+          </button>
+        )}
       </div>
 
       <div className="machine-choice">

@@ -15,6 +15,21 @@
   font-size: 32px;
   font-weight: 800px;
   margin: 50px;
+  margin-top: 0px;
+}
+.playAgainButton {
+  border-radius: 8px;
+  font-weight: 700;
+  width: 150px;
+  height: 45px;
+  color: rgb(255, 255, 255);
+  border: rgb(255, 255, 255) solid 1px;
+  background: transparent;
+}
+.playAgainButton:hover {
+  background: #ffffff0e;
+  border: none;
+  color: #ffffff31;
 }
 .move-container {
   position: relative;
