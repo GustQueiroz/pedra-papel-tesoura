@@ -9,7 +9,13 @@
   text-align: center;
   color: #fff;
 }
-
+.result-message-container {
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800px;
+  margin: 50px;
+}
 .move-container {
   position: relative;
   display: flex;
@@ -22,6 +28,7 @@
 
 .move-image {
   position: relative;
+  border: none;
   width: 100px;
   height: 100px;
   border: none;

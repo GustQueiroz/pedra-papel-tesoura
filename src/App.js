@@ -112,7 +112,7 @@ function App() {
 
     setTimeout(() => {
       setMachineMoveType(machineMoveType);
-    }, 4000);
+    }, 3000);
 
     setButtonsContainerOpacity(0);
 
