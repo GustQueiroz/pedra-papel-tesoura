@@ -19,6 +19,7 @@ const BattleComponent = ({ playerMove, machineMoveType }) => {
   const machineMoveIcon = moveIcons[machineMoveType];
   const [winner, setWinner] = useState("");
   const [isButtonVisible, setButtonVisibility] = useState(false);
+  const [isMachineVisibility, setMachineVisibility] = useState(false);
   const [resultMessage, setResultMessage] = useState("");
   const [possibleMoves, setPossibleMoves] = useState([
     {
@@ -54,7 +55,17 @@ const BattleComponent = ({ playerMove, machineMoveType }) => {
   ]);
 
   useEffect(() => {
-    const delay = 3500;
+    const delay = 3000;
+
+    const timeoutId = setTimeout(() => {
+      setMachineVisibility(true);
+    }, delay);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  useEffect(() => {
+    const delay = 2000;
 
     const timeoutId = setTimeout(() => {
       const playerMoveValidation = possibleMoves.find(
@@ -65,10 +76,10 @@ const BattleComponent = ({ playerMove, machineMoveType }) => {
         playerMoveValidation.wins.includes(machineMoveType);
 
       const message = isPlayerTheWinner
-        ? "Você Ganhou"
+        ? "VOCÊ GANHOU"
         : machineMoveType === playerMove
-        ? "Houve um Empate"
-        : "Você Perdeu";
+        ? "HOUVE UM EMPATE"
+        : "VOCÊ PERDEU";
 
       setResultMessage(message);
 
@@ -103,7 +114,9 @@ const BattleComponent = ({ playerMove, machineMoveType }) => {
       <div className="machine-choice">
         <p>ESCOLHA DA MAQUINA</p>
         <div className="move-container">
-          <img className="move-image" src={machineMoveIcon} alt="." />
+          {isMachineVisibility && (
+            <img className="move-image" src={machineMoveIcon} />
+          )}
         </div>
       </div>
     </div>
