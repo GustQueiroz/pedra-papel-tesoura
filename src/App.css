@@ -74,7 +74,7 @@ body {
 .rulesButton {
   position: fixed;
   top: 900px;
-  left: 1600px;
+  margin-left: 400px;
   border-radius: 8px;
   font-weight: 700;
   width: 150px;

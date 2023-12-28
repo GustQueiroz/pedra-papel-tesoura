@@ -12,7 +12,6 @@ import ScoreBoard from "./components/ScoreBoard.js";
 import BattleComponent from "./components/BattleComponent.js";
 
 function App() {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [score, setScore] = useState(0);
   const [buttonsContainerVisible, setButtonsContainerVisible] = useState(true);
   const [buttonsContainerOpacity, setButtonsContainerOpacity] = useState(1);
@@ -58,14 +57,6 @@ function App() {
       setScore(parseInt(storedScore, 10));
     }
   }, []);
-
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
 
   const makeMove = (playerMove) => {
     const minimumMachineMoveNumber = 1;
@@ -117,7 +108,7 @@ function App() {
       setTimeout(() => {
         setScore(0);
         localStorage.setItem("score", "0");
-      }, 350);
+      }, 3500);
     }
 
     setPlayerMove(playerMove);
@@ -132,15 +123,6 @@ function App() {
       setButtonsContainerVisible(false);
     }, 1000);
   };
-
-  function Refreshscore(isPlayerTheWinner) {
-    if (isPlayerTheWinner === "Você Ganhou") {
-      setScore((prevScore) => prevScore + 1);
-    }
-  }
-
-  console.log(winner);
-  console.log(score);
 
   return (
     <div className="container">
