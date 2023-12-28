@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import RulesButton from "./components/RulesButton.js";
 import RockHandIcon from "./img/icon-rock.svg";
@@ -13,17 +13,9 @@ import BattleComponent from "./components/BattleComponent.js";
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [score, setScore] = useState(0);
   const [buttonsContainerVisible, setButtonsContainerVisible] = useState(true);
   const [buttonsContainerOpacity, setButtonsContainerOpacity] = useState(1);
-
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
   const [winner, setWinner] = useState("");
   const [playerMove, setPlayerMove] = useState("");
   const [machineMoveType, setMachineMoveType] = useState("");
@@ -60,6 +52,21 @@ function App() {
     },
   ]);
 
+  useEffect(() => {
+    const storedScore = localStorage.getItem("score");
+    if (storedScore) {
+      setScore(parseInt(storedScore, 10));
+    }
+  }, []);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   const makeMove = (playerMove) => {
     const minimumMachineMoveNumber = 1;
     const maximumMachineMoveNumber = 5;
@@ -90,9 +97,6 @@ function App() {
         break;
     }
 
-    console.log(machineMoveType);
-    console.log(playerMove);
-
     const playerMoveValidation = possibleMoves.find(
       (currentMove) => currentMove.type === playerMove
     );
@@ -102,10 +106,18 @@ function App() {
 
     if (isPlayerTheWinner) {
       setWinner("Você Ganhou");
+      setTimeout(() => {
+        setScore((prevScore) => prevScore + 1);
+        localStorage.setItem("score", (score + 1).toString());
+      }, 4000);
     } else if (machineMoveType === playerMove) {
       setWinner("Houve um Empate");
     } else {
       setWinner("Você Perdeu");
+      setTimeout(() => {
+        setScore(0);
+        localStorage.setItem("score", "0");
+      }, 4000);
     }
 
     setPlayerMove(playerMove);
@@ -121,11 +133,18 @@ function App() {
     }, 1000);
   };
 
+  function Refreshscore(isPlayerTheWinner) {
+    if (isPlayerTheWinner === "Você Ganhou") {
+      setScore((prevScore) => prevScore + 1);
+    }
+  }
+
   console.log(winner);
+  console.log(score);
 
   return (
     <div className="container">
-      <ScoreBoard />
+      <ScoreBoard scores={score} />
 
       <div
         className={`buttonsContainer ${

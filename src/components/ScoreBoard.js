@@ -8,7 +8,7 @@ const ScoreBoard = ({ scores }) => {
         <p>PEDRA</p>
         <p>PAPEL</p>
         <p>TESOURA</p>
-        <p>LAGARTIXA</p>
+        <p>LAGARTO</p>
         <p>SPOCK</p>
       </div>
       <div className="score-container">
